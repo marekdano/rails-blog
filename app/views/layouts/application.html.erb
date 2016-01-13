@@ -14,16 +14,16 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header"><%= link_to 'RailsBlog', root_path, class: "navbar-brand navbar-link"  %>
+    <div class="navbar-header"><%= link_to 'RailsBlog', root_path, class: "navbar-brand navbar-link custom-link"  %>
       <div class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div>
     </div>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav navbar-right">
-        <li role="presentation"><a href="#">About</a></li>
         <li class="<%= 'active' if current_page?(articles_path) %>"role="presentation"><%= link_to 'Blog', articles_path %></li>
-        <li role="presentation"><a href="#">Contact</a></li>
+        <li role="presentation"><a href="#">About</a></li>
+        <li role="presentation"><a href="#footer">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -39,21 +39,27 @@
   </div>
 </div>
 
-<footer class="container-fluid">
-  <nav>
-    <ul class="footer-navbar">
-        <li><%= link_to 'About', articles_path %></li>
+<footer class="container-fluid" id="footer">
+  <div class="container">
+   <div class="col-sm-2 nav-block">
+    <nav>
+      <ul class="footer-navbar">
         <li><%= link_to 'Blog', articles_path %></li>
+        <li><%= link_to 'About', articles_path %></li>
         <li><%= link_to 'Contact', articles_path %></li>
-    </ul>
-  </nav>
-  <div class="social-buttons">
-    <a href="https://facebook.com" class="facebook-button">facebook</a>
-    <a href="https://twitter.com" class="twitter-button">twitter</a>
-  </div>
-  <div id="copyright">
-    &copy; RailsBlog 2016
-  </div>
+      </ul>
+    </nav>
+    <div class="social-buttons">
+      <a href="https://facebook.com" class="fa-icon"><%= fa_icon "facebook-square" %></a>
+      <a href="https://twitter.com" class="fa-icon"><%= fa_icon "twitter-square" %></a>
+      <a href="https://github.com" class="fa-icon"><%= fa_icon "github-square" %></a>
+    </div>
+    <div id="copyright">
+      &copy; RailsBlog 2016
+    </div> 
+
+   </div><!-- /container -->    
+  </div><!-- /container-fluid -->
 </footer>
 
 </body>
