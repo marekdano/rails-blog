@@ -1,0 +1,7 @@
+
+<h2>Recent Articles</h2>
+
+<% @articles.last(2).reverse.each do |article| %>
+  <h5><%= article.title %></h5>
+  <h6>Posted on <%= article.created_at.strftime("%b %d, %Y %H:%M:%S") %></h6>
+<% end %>

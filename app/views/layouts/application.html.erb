@@ -34,14 +34,15 @@
     <div class="col-sm-8 blog-main">
      <%= yield %>
     </div>
-    <div class="col-sm-3 col-sm-offset-1 blog-sidebar"> 
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar hidden-xs"> 
+      <%= render 'sidebar' %>
     </div>
   </div>
 </div>
 
 <footer class="container-fluid" id="footer">
   <div class="container">
-   <div class="col-sm-2 nav-block">
+   <div class="col-xs-8 col-sm-4 col-md-2 nav-block">
     <nav>
       <ul class="footer-navbar">
         <li><%= link_to 'Blog', articles_path %></li>
