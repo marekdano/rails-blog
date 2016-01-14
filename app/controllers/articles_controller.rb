@@ -1,10 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_articles
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
   end
 
   # GET /articles/1
@@ -65,6 +65,11 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    end
+    
+    # Use callbacks to share common setup or constraints between actions.
+    def set_articles
+      @articles = Article.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
