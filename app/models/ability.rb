@@ -28,5 +28,21 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+
+    # Default CanCanCan aliases
+    # alias_action :index, :show, :to => :read
+    # alias_action :new, :to => :create
+    # alias_action :edit, :to => :update
+
+    
+    user ||= User.new # guest user (not logged in)
+      
+    if user.has_role? :admin
+      can :manage, :all
+    else
+      can [:show, :create, :update, :destroy], User, id: user.id
+    end
+
   end
 end
