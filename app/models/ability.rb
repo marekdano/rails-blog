@@ -41,7 +41,7 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :moderator
-      can :destroy, Article
+      can [:create, :destroy], Comment
     else
       can [:show, :create, :update, :destroy], User, id: user.id
     end
