@@ -8,6 +8,9 @@
 
 <p><%= @article.body %></p>
 
+<%= render 'new_comment' %>
+<%= render 'comments' %>
+
 <div class="article-links">
   <%= link_to 'Back', articles_path %> |
   <%= link_to 'Edit', edit_article_path(@article) %> |

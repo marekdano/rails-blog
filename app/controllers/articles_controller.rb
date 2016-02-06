@@ -10,11 +10,12 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @comment = @article.comments.build
+    @comments = @article.comments.order("created_at DESC")
   end
 
   # GET /articles/new
   def new
-    
     @article = Article.new
   end
 

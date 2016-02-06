@@ -1,0 +1,17 @@
+<div class="product-reviews" id="product-reviews">
+  <div class="row">
+    <% @comments.each do |comment| %>
+    
+      <div class="col-md-11 comment-box">
+        <p><%= comment.user.first_name %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small>
+          <% if signed_in? && can?(:destroy, Comment) %>
+            <%= link_to "Delete", article_comment_path(@article, comment), method: :delete, data: { confirm: "Are you sure to delete this comment?" } %>
+          <% end %>
+        </p>
+        <p><%= comment.body %></p>
+      </div>
+    
+    <% end %>
+  </div>
+  <% #will_paginate @comments, :params => {:anchor => "product-reviews"} %>
+</div>
