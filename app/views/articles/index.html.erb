@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <%= can? :create, Article %>
+</p>
 
 <div class="container">
   <div class="row">
@@ -20,7 +23,9 @@
       <% end %>
 
       <div class="article-links">
-        <%= link_to 'New Article', new_article_path %>
+        <% if can? [:create, :new], Article %>
+          <%= link_to 'New Article', new_article_path %>
+        <% end %>
       </div>
 
     </div>

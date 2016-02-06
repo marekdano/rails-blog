@@ -12,7 +12,11 @@
 <%= render 'comments' %>
 
 <div class="article-links">
-  <%= link_to 'Back', articles_path %> |
-  <%= link_to 'Edit', edit_article_path(@article) %> |
-  <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back', articles_path %> 
+  <% if can? :edit, Article %>
+    | <%= link_to 'Edit', edit_article_path(@article) %> 
+  <% end %>
+  <% if can? :destroy, Article %>
+    | <%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>

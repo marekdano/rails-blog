@@ -37,13 +37,13 @@ class Ability
 
     
     user ||= User.new # guest user (not logged in)
-      
+    can [:show, :create, :update, :destroy], User, id: user.id
+    can :create, Comment
+
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :moderator
-      can [:create, :destroy], Comment
-    else
-      can [:show, :create, :update, :destroy], User, id: user.id
+      can :destroy, Comment
     end
 
   end
