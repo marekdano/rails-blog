@@ -32,6 +32,9 @@ gem 'cancancan'
 # Use Rolify for roles
 gem 'rolify'
 
+# Use will_pagination for splitting the list of something into multiple pages
+gem 'will_paginate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
