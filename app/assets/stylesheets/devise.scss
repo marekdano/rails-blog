@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-form {
+.devise-form {
   max-width: 320px;
   padding: 15px;
   margin: 5em auto 6em auto;
@@ -11,4 +11,8 @@
     margin-left: 0;
     margin-right: 0; 
   }
+}
+
+.container-links {
+  padding: 3em 0;
 }

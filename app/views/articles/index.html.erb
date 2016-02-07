@@ -1,39 +1,32 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <%= can? :create, Article %>
-</p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-8 blog-main">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>    
+<div class="row">
+  <div class="col-sm-8 blog-main">
+      
+    <% @articles.reverse.each do |article| %>
+      
+      <article>
+        <%= link_to image_tag(article.image_url, class: "img-responsive", alt: "name of the image image01"), article %> 
+        <h1><%= link_to article.title, article %></h1>
+        <h6>Posted by <%= article.author %> on <%= article.created_at.strftime("%b %d, %Y %H:%M:%S") %></h6>
+        <h5>Written by <%= article.author %></h5>
+        <p><%= article.body.truncate(400) %></p>
+        <%= link_to 'Read more', article, class: "btn btn-default" %>
+      </article>
 
-      <% @articles.reverse.each do |article| %>
-        
-        <article>
-          <%= link_to image_tag(article.image_url, class: "img-responsive", alt: "name of the image image01"), article %> 
-          <h1><%= link_to article.title, article %></h1>
-          <h6>Posted by <%= article.author %> on <%= article.created_at.strftime("%b %d, %Y %H:%M:%S") %></h6>
-          <h5>Written by <%= article.author %></h5>
-          <p><%= article.body.truncate(400) %></p>
-          <%= link_to 'Read more', article, class: "btn btn-default" %>
-        </article>
+    <% end %>
 
+    <div class="article-links">
+      <% if can? [:create, :new], Article %>
+        <%= link_to 'New Article', new_article_path %>
       <% end %>
-
-      <div class="article-links">
-        <% if can? [:create, :new], Article %>
-          <%= link_to 'New Article', new_article_path %>
-        <% end %>
-      </div>
-
     </div>
 
-    <%= render 'sidebar' %>
-
   </div>
+
+  <%= render 'sidebar' %>
+
 </div>
+
 
 
 <!--
