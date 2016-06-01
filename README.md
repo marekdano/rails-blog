@@ -5,6 +5,7 @@ Authentication: using "devise" gem
 Authorization: using "CanCanCan" gem
 
 App has 3 roles:
+
 1. admin: 
   - can do all actions for Article, User, Comment models
 2. moderator:
