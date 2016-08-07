@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   resourcify
 
+  mount_uploader :image_url, ImageUploader
+
   belongs_to :user
   has_many :comments
 

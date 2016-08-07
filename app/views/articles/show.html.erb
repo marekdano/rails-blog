@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-sm-8 blog-main">
     <article>
-      <%= image_tag(@article.image_url, class: "img-responsive", alt: "name of the image image01") %> 
+      <%= image_tag(@article.image_url.medium, class: "img-responsive", alt: "name of the image image01") %> 
       <h1><%= @article.title %></h1>
       <h6>Posted by <%= @article.author %> on <%= @article.created_at.strftime("%b %d, %Y %H:%M:%S") %></h6>
       <h5>Written by <%= @article.author %></h5>

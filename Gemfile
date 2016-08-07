@@ -34,6 +34,14 @@ gem 'rolify'
 # Use will_pagination for splitting the list of something into multiple pages
 gem 'will_paginate'
 
+# Add function to upload any file
+gem 'carrierwave'      
+# Gem for resizing the uploaded image
+gem 'mini_magick'    
+# Gem for uploading the image to Amazon S3
+gem 'fog'                   
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
